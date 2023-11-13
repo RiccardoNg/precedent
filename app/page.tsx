@@ -48,7 +48,7 @@ export default async function Home() {
           style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
         >
           An opinionated collection of components, hooks, and utilities for your
-          Next.js project.
+          Next.js project N.
         </p>
         <div
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
