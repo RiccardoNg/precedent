@@ -18,8 +18,8 @@ export default function BMI() {
   return (
     <>
     <div className="z-10 w-full max-w-xl px-5 xl:px-0">
-    <form onSubmit={onSubmit}>
-      {/* <form> */}
+    {/* <form onSubmit={onSubmit}> */}
+      <form>
         <label htmlFor="weight">Weight</label>
         <input type="text" name="weight" value="22"/>
         <br/>
