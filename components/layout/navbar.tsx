@@ -21,7 +21,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 const products = [
-  { name: 'BMI Calculation API', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
+  { name: 'BMI Calculation API', description: 'Get a better understanding of your traffic', href: 'api/bmi', icon: ChartPieIcon },
   { name: 'ECG Analytic API', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
   { name: 'Stethescope Record API', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
   { name: 'Blood Pressure API', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
