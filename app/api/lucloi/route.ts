@@ -1,7 +1,7 @@
 export async function GET() {
   const res = await fetch('https://get-meme-lucloi.p.rapidapi.com/api/posts', {
     headers: {
-      'X-RapidAPI-Key': 'L5kiZdYz7Pmsh5VJpaWgy7hc8LSRp1YkeK9jsndroxpg3AQsBN',
+      'X-RapidAPI-Key': `${process.env.X_RapidAPI_Key}`,
       'X-RapidAPI-Host': 'get-meme-lucloi.p.rapidapi.com'
     },
   })

@@ -2,7 +2,7 @@
   import OpenAI from "openai";
 
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: `${process.env.OPEN_AI}`,
   });
 
   // async function main() {

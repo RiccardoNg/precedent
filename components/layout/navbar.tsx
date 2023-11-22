@@ -25,6 +25,7 @@ const products = [
   { name: 'ECG Analytic API', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
   { name: 'Stethescope Record API', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
   { name: 'Blood Pressure API', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
+  { name: 'Smart Scale API', description: 'Yamada Smart Scale', href: 'api/bmi', icon: SquaresPlusIcon },
   { name: 'ADA Lucloi Advisor API', description: 'Build strategic funnels that will convert', href: 'api/lucloi', icon: ArrowPathIcon },
 ]
 
