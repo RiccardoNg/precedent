@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 
 /**
  * This is main page for the Bluetooth connection
- * @param {*} props
+ * @param {*} props - show all the props
  * @param device - show all the device connected
  * @param characteristic - show all the characteristic of the device
  * @param server - show all the server of the device

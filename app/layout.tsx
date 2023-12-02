@@ -7,10 +7,10 @@ import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Precedent - Building blocks for your Next.js project",
+  title: "Delago - Your Health Assistant",
   description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-  metadataBase: new URL("https://precedent.dev"),
+    "Delago is the all-in-one solution for your Family Health Tracking. We provide the most safety AI support for you",
+  metadataBase: new URL("https://delago.ai"),
   themeColor: "#FFF",
 };
 
