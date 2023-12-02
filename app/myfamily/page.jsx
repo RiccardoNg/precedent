@@ -23,7 +23,7 @@ import { useEffect, useState } from "react";
  * @param service - show all the service of the device
  * @returns 
  */
-export default function Bluetooth() {
+export default function MyFamily() {
   
   const [device, setDevice] = useState(null);
   const [characteristic, setCharacteristic] = useState([]);
@@ -89,8 +89,12 @@ export default function Bluetooth() {
   return (
       <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={connectToDevice}>CONNECT</button>
-        <h1>Bluetooth Device List Connected:</h1>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={connectToDevice}>DATA CONNECT</button>
+        <h1>My Family tracking:</h1>
+        <h2>+ Father:</h2>
+        <h2>+ Mother:</h2>
+        <h2>+ Wife:</h2>
+        <h2>+ Baby:</h2>
         {device && (
           <>
             <p>Device - {device.name}</p>
