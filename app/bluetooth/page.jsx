@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 
 //   return <></>;
 // }
-function Bluetooth({ setDevice, setCharacteristic, setServer, setService }) {
+export default function Bluetooth({ setDevice, setCharacteristic, setServer, setService }) {
 
   const connectToDevice = async () => {
       const device = await navigator.bluetooth
@@ -53,7 +53,7 @@ function Bluetooth({ setDevice, setCharacteristic, setServer, setService }) {
 
 }
 
-export default Bluetooth
+// export default Bluetooth
 
 
 
