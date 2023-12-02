@@ -9,12 +9,22 @@ import { nFormatter } from "@/lib/utils";
 import { useEffect, useState } from "react";
 // require('node-web-bluetooth');
 // export default function Card() {
-  
+
 
 //   return <></>;
 // }
+
+/**
+ * This is main page for the Bluetooth connection
+ * @param {*} props
+ * @param device - show all the device connected
+ * @param characteristic - show all the characteristic of the device
+ * @param server - show all the server of the device
+ * @param service - show all the service of the device
+ * @returns 
+ */
 export default function Bluetooth() {
-  //{ setDevice, setCharacteristic, setServer, setService }
+  
   const [device, setDevice] = useState(null);
   const [characteristic, setCharacteristic] = useState([]);
   const [server, setServer] = useState([]);
@@ -38,6 +48,36 @@ export default function Bluetooth() {
       device.addEventListener('gattserverdisconnected', onDisconnected)
   }
 
+  // --- TEST BATTERY   --- //
+  // function onButtonClick() {
+  //   log('Requesting Bluetooth Device...');
+  //   navigator.bluetooth.requestDevice(
+  //     {filters: [{services: ['battery_service']}]})
+  //   .then(device => {
+  //     log('Connecting to GATT Server...');
+  //     return device.gatt.connect();
+  //   })
+  //   .then(server => {
+  //     log('Getting Battery Service...');
+  //     return server.getPrimaryService('battery_service');
+  //   })
+  //   .then(service => {
+  //     log('Getting Battery Level Characteristic...');
+  //     return service.getCharacteristic('battery_level');
+  //   })
+  //   .then(characteristic => {
+  //     log('Reading Battery Level...');
+  //     return characteristic.readValue();
+  //   })
+  //   .then(value => {
+  //     let batteryLevel = value.getUint8(0);
+  //     log('> Battery Level is ' + batteryLevel + '%');
+  //   })
+  //   .catch(error => {
+  //     log('Argh! ' + error);
+  //   });
+  // }
+
   const onDisconnected = (event) => {
       alert("Vibrator Disconnected")
       const device = ""
@@ -49,11 +89,11 @@ export default function Bluetooth() {
   return (
       <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
-        <button className="bluetooth" onClick={connectToDevice}>CONNECT</button>
-        <h1>Bluetooth Device Connection</h1>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={connectToDevice}>CONNECT</button>
+        <h1>Bluetooth Device List Connected:</h1>
         {device && (
           <>
-            <p>Connected to device: {device.name}</p>
+            <p>Device - {device.name}</p>
             <ul>
               {characteristic.map((characteristic) => (
                 <li key={characteristic.uuid}>{characteristic.uuid}</li>
@@ -67,62 +107,3 @@ export default function Bluetooth() {
   )
 
 }
-
-// export default Bluetooth
-
-
-
-
-// import { useEffect, useState } from 'react';
-// import { useRouter } from 'next/router';
-
-// const BluetoothPage = () => {
-//   const router = useRouter();
-//   const [device, setDevice] = useState(null);
-//   const [characteristics, setCharacteristics] = useState([]);
-
-//   const connectToDevice = async () => {
-//     try {
-//       const device = await navigator.bluetooth.requestDevice({
-//         acceptAllDevices: true,
-//         optionalServices: ['your-service-uuid'], // Replace with your Bluetooth service UUID
-//       });
-
-//       const server = await device.gatt.connect();
-//       const service = await server.getPrimaryService('your-service-uuid'); // Replace with your Bluetooth service UUID
-//       const characteristics = await service.getCharacteristics();
-
-//       setDevice(device);
-//       setCharacteristics(characteristics);
-//     } catch (error) {
-//       console.error('Error connecting to Bluetooth device:', error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     // Check if Web Bluetooth API is supported
-//     if ('bluetooth' in navigator) {
-//       connectToDevice();
-//     } else {
-//       console.error('Web Bluetooth API is not supported in this browser.');
-//     }
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Bluetooth Device Connection</h1>
-//       {device && (
-//         <>
-//           <p>Connected to device: {device.name}</p>
-//           <ul>
-//             {characteristics.map((characteristic) => (
-//               <li key={characteristic.uuid}>{characteristic.uuid}</li>
-//             ))}
-//           </ul>
-//         </>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default BluetoothPage;

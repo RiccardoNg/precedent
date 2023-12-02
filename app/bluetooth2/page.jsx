@@ -30,10 +30,10 @@ export default function BluetoothPage() {
   // .catch((e) => console.log(e));
 
     const connectToDevice = async () => {
-    try {
+    // try {
       const device2 = await navigator.bluetooth.requestDevice({
         acceptAllDevices: true,
-        optionalServices: ['your-service-uuid'], // Replace with your Bluetooth service UUID
+        // optionalServices: ['your-service-uuid'], // Replace with your Bluetooth service UUID
       });
 
       const server = await device2.gatt.connect();
@@ -42,9 +42,9 @@ export default function BluetoothPage() {
 
       setDevice(device2);
       setCharacteristics(characteristics);
-    } catch (error) {
-      console.error('Error connecting to Bluetooth device:', error);
-    }
+    // } catch (error) {
+    //   console.error('Error connecting to Bluetooth device:', error);
+    // }
   };
 
     useEffect(() => {
@@ -59,9 +59,12 @@ export default function BluetoothPage() {
   return (
     <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={connectToDevice}>CONNECT</button>
+        
       <h1>Bluetooth Device Connection 2</h1>
       { device2 && (
         <>
+          
           <p>Connected to device: {device.name}</p>
           <ul>
             {characteristics.map((characteristic) => (
