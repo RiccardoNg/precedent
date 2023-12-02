@@ -34,7 +34,7 @@ export default async function Home() {
         >
           <Twitter className="h-5 w-5 text-[#1d9bf0]" />
           <p className="text-sm font-semibold text-[#1d9bf0]">
-            Introducing Precedent
+            Follow Delago AI
           </p>
         </a>
         <h1
@@ -96,7 +96,7 @@ export default async function Home() {
             title={title}
             description={description}
             demo={
-              title === "Beautiful, reusable components" ? (
+              title === "Accurate, Secured, Generative AI support" ? (
                 <ComponentGrid />
               ) : (
                 demo
@@ -116,6 +116,16 @@ const features = [
     description:
       "Pre-built beautiful, a11y-first components, powered by [Tailwind CSS](https://tailwindcss.com/), [Radix UI](https://www.radix-ui.com/), and [Framer Motion](https://framer.com/motion)",
     large: true,
+    // demo:
+    // <div className="flex items-center justify-center space-x-20">
+    //   <Image
+    //       src="/drgull2.JPG"
+    //       alt="Deploy with Vercel"
+    //       width={400}
+    //       height={200}
+    //       unoptimized
+    //     />
+    // </div>,
   },
   {
     title: "Performance first",
@@ -123,30 +133,40 @@ const features = [
       "Built on [Next.js](https://nextjs.org/) primitives like `@next/font` and `next/image` for stellar performance.",
     demo: <WebVitals />,
   },
-  {
-    title: "One-click Deploy",
-    description:
-      "Jumpstart your next project by deploying Precedent to [Vercel](https://vercel.com/) in one click.",
-    demo: (
-      <a href={DEPLOY_URL}>
-        <Image
-          src="https://vercel.com/button"
-          alt="Deploy with Vercel"
-          width={120}
-          height={30}
-          unoptimized
-        />
-      </a>
-    ),
-  },
+  // {
+  //   title: "One-click Deploy",
+  //   description:
+  //     "Jumpstart your next project by deploying Precedent to [Vercel](https://vercel.com/) in one click.",
+  //   demo: (
+  //     <a href={DEPLOY_URL}>
+  //       <Image
+  //         src="https://vercel.com/button"
+  //         alt="Deploy with Vercel"
+  //         width={120}
+  //         height={30}
+  //         unoptimized
+  //       />
+  //     </a>
+  //   ),
+  // },
   {
     title: "Built-in Auth + Database",
     description:
       "Precedent comes with authentication and database via [Auth.js](https://authjs.dev/) + [Prisma](https://prisma.io/)",
+    large: true,
     demo: (
       <div className="flex items-center justify-center space-x-20">
-        <Image alt="Auth.js logo" src="/authjs.webp" width={50} height={50} />
-        <Image alt="Prisma logo" src="/prisma.svg" width={50} height={50} />
+        {/* <Image alt="Auth.js logo" src="/authjs.webp" width={50} height={50} />
+        <Image alt="Prisma logo" src="/prisma.svg" width={50} height={50} /> */}
+        <a href={DEPLOY_URL}>
+        <Image
+          src="/drgull2.JPG"
+          alt="Deploy with Vercel"
+          width={400}
+          height={200}
+          unoptimized
+        />
+        </a>
       </div>
     ),
   },

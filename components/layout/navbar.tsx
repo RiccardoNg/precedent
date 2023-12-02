@@ -131,7 +131,7 @@ export default function NavBar({ session }: { session: Session | null }) {
                   </Transition>
                   </Popover>
                   <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                    About Delago
+                    Affiliate OpenAI & Canva
                   </a>
                   <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                     Safety information
