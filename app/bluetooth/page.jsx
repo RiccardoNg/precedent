@@ -24,14 +24,14 @@ export default function Bluetooth({ setDevice, setCharacteristic, setServer, set
           //     { services: [ 'Service ID' ]} //UUID of the service
           // ]
       })
-      setDevice(device)
-      const server = await device.gatt.connect()
-      setServer(server)
-      const service = await server.getPrimaryService('Service ID')
-      setService(service)
-      const characteristic = await service.getCharacteristic('Characteristic ID')
-      setCharacteristic(characteristic)
-      device.addEventListener('gattserverdisconnected', onDisconnected)
+      // setDevice(device)
+      // const server = await device.gatt.connect()
+      // setServer(server)
+      // const service = await server.getPrimaryService('Service ID')
+      // setService(service)
+      // const characteristic = await service.getCharacteristic('Characteristic ID')
+      // setCharacteristic(characteristic)
+      // device.addEventListener('gattserverdisconnected', onDisconnected)
   }
 
   const onDisconnected = (event) => {
