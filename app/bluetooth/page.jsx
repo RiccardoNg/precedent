@@ -16,7 +16,9 @@ import { useEffect, useState } from "react";
 export default function Bluetooth() {
   //{ setDevice, setCharacteristic, setServer, setService }
   const [device, setDevice] = useState(null);
-  const [characteristics, setCharacteristic] = useState([]);
+  const [characteristic, setCharacteristic] = useState([]);
+  const [server, setServer] = useState([]);
+  const [service, setService] = useState([]);
   const connectToDevice = async () => {
       const device = await navigator.bluetooth
       .requestDevice({
@@ -26,14 +28,14 @@ export default function Bluetooth() {
           //     { services: [ 'Service ID' ]} //UUID of the service
           // ]
       })
-      // setDevice(device)
-      // const server = await device.gatt.connect()
-      // setServer(server)
-      // const service = await server.getPrimaryService('Service ID')
-      // setService(service)
-      // const characteristic = await service.getCharacteristic('Characteristic ID')
-      // setCharacteristic(characteristic)
-      // device.addEventListener('gattserverdisconnected', onDisconnected)
+      setDevice(device)
+      const server = await device.gatt.connect()
+      setServer(server)
+      const service = await server.getPrimaryService('Service ID')
+      setService(service)
+      const characteristic = await service.getCharacteristic('Characteristic ID')
+      setCharacteristic(characteristic)
+      device.addEventListener('gattserverdisconnected', onDisconnected)
   }
 
   const onDisconnected = (event) => {
@@ -48,6 +50,17 @@ export default function Bluetooth() {
       <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
         <button className="bluetooth" onClick={connectToDevice}>CONNECT</button>
+        <h1>Bluetooth Device Connection</h1>
+        {device && (
+          <>
+            <p>Connected to device: {device.name}</p>
+            <ul>
+              {characteristic.map((characteristic) => (
+                <li key={characteristic.uuid}>{characteristic.uuid}</li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
       
       </>
