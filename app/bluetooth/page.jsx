@@ -13,8 +13,10 @@ import { useEffect, useState } from "react";
 
 //   return <></>;
 // }
-export default function Bluetooth({ setDevice, setCharacteristic, setServer, setService }) {
-
+export default function Bluetooth() {
+  //{ setDevice, setCharacteristic, setServer, setService }
+  const [device, setDevice] = useState(null);
+  const [characteristics, setCharacteristic] = useState([]);
   const connectToDevice = async () => {
       const device = await navigator.bluetooth
       .requestDevice({
