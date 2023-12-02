@@ -51,7 +51,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  password      String ?   @default("password")
+  password      String   @default("password")
 }
 
 model VerificationToken {
