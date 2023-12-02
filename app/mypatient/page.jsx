@@ -7,7 +7,7 @@ import { PrismaClient } from '@prisma/client';
 export default async function Cart() {
   const { rows } = await sql`SELECT * from public."User"`;
   const user = await prisma.user.findUnique({
-    where: { id: 'asd-asd' },
+    where: { id: "asd-asd" },
   });
   const users = await prisma.user.findMany();
 
