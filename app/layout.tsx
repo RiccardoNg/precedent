@@ -5,6 +5,7 @@ import { sfPro, inter } from "./fonts";
 import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
+import SideBar from "@/components/layout/sidebar";
 
 export const metadata = {
   title: "Delago - Your Health Assistant",
@@ -29,6 +30,9 @@ export default async function RootLayout({
         <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
           {children}
         </main>
+        <aside id="cta-button-sidebar" className="fixed top-20 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+          <SideBar/>
+        </aside>
         <Footer />
         <Analytics />
       </body>
