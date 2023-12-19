@@ -28,6 +28,7 @@
     "@vercel/analytics": "^0.1.11",
     "@vercel/og": "^0.0.26",
     "@vercel/postgres": "^0.5.1",
+    "ai": "^2.2.29",
     "bcrypt": "^5.1.1",
     "classnames": "^2.3.2",
     "clsx": "^2.0.0",
