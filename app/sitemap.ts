@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
-import prisma from "@/lib/prisma";
+import { PrismaClient } from '../prisma/generated/client'
+const prisma = new PrismaClient()
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const users = await prisma.user.findMany({
