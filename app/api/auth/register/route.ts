@@ -1,4 +1,6 @@
-import prisma from "@/lib/prisma";
+// import prisma from "@/lib/prisma";
+import { PrismaClient } from '../../../../prisma/generated/client'
+const prisma = new PrismaClient()
 import { NextApiRequest, NextApiResponse } from "next";
 import { hash } from "bcrypt";
 import { NextResponse } from "next/server";
