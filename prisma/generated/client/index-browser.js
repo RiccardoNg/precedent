@@ -148,6 +148,16 @@ exports.Prisma.TestScalarFieldEnum = {
   name2: 'name2'
 };
 
+exports.Prisma.TodoScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  importance: 'importance',
+  complete: 'complete',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -169,7 +179,8 @@ exports.Prisma.ModelName = {
   Session: 'Session',
   User: 'User',
   VerificationToken: 'VerificationToken',
-  Test: 'Test'
+  Test: 'Test',
+  Todo: 'Todo'
 };
 
 /**
