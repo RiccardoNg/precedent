@@ -19,6 +19,7 @@ export async function GET(req: Request) {
   try {
     const data = await prisma.todo.findMany({
       where: { userId: "clqhpkk980000tkio979dc0y7" }
+      // where: {userId: String(session?.user?.email)}
       // ,orderBy: { createdAt: 'asc' }
     })
 
@@ -43,8 +44,8 @@ export async function POST(req: Request) {
       data: {
         title,
         importance,
-        userId: String(session?.user?.email)
-        
+        // userId: String(session?.user?.email)
+        userId: "clqhpkk980000tkio979dc0y7"
       }
     })
 

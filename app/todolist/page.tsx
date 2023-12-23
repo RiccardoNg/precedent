@@ -19,6 +19,27 @@ export default function NewTodoPage() {
 //     }
 //   })
 
+  const createTodo = async () => {
+    const todo = {
+      title: "title1",
+      importance: "Important",
+      userId: "clqhpkk980000tkio979dc0y7"
+    }
+
+    const response = await fetch('api/todos', {
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body:JSON.stringify(todo)
+
+    });
+
+    if (response.ok) {
+      console.log("done add todo")
+    }
+  }
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
@@ -27,7 +48,8 @@ export default function NewTodoPage() {
     }
 
     try {
-    //   createTodo({ title, importance })
+      // createTodo({ title, importance })
+      createTodo()
 
     //   router.push(AppRoutes.Home)
     } catch (err) {
@@ -67,7 +89,7 @@ export default function NewTodoPage() {
               <Link href='..' className='btn-primary'>
                 Cancel
               </Link>
-              <button disabled={isCreating} type='submit' className='btn-primary'>
+              <button className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none" disabled={isCreating} type='submit' >
                 Create
               </button>
             </div>
